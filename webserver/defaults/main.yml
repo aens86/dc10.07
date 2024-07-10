@@ -1,2 +1,3 @@
----
+war_file: /tmp/hello-1.0.war
+dest_folder: /var/lib/tomcat9/webapps
 # defaults file for webserver
