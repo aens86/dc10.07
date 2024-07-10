@@ -1,2 +1,4 @@
----
+dest_f: /home/user/1
+repo_git: https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
+dest_sync: /tmp
 # defaults file for build
