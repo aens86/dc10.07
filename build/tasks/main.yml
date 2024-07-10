@@ -18,5 +18,6 @@
     synchronize:
       mode: pull
       src: {{dest_f}}/target/hello-1.0.war
-      dest: {{dest_sync}}      
+      dest: {{dest_sync}} 
+    notify: copy artefact       
 # tasks file for build

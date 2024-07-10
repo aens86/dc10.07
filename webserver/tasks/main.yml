@@ -8,8 +8,8 @@
   
   - name: Transfer artifact to web
     synchronize:
-      src: /tmp/hello-1.0.war
-      dest: /var/lib/tomcat9/webapps
+      src: {{war_file}}
+      dest: {{dest_folder}}
   - name: Ensure started service tomcat
     service:
      name: tomcat9
