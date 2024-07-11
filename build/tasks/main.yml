@@ -1,22 +1,15 @@
----
 - name: provisioning packages
   apt: name={{item}} state=present
   with_items:
-      - git
-      - default-jdk
-      - maven
-      - rsync
+  - git
+  - default-jdk
+  - maven
+  - rsync
 - name: Clone a repo  git directory
-    git:
-      repo: {{repo_git}}
-      dest: {{dest_f}}
-      update: yes
+  git: repo={{ repo_git }} dest={{ dest_f }}
 - name: Build maven
-    command: chdir={{dest_f}}/ mvn package
-
-  - name: Synchronization of src on the control machine to dest on the remote hosts
-    synchronize:
-      mode: pull
-      src: {{dest_f}}/target/hello-1.0.war
-      dest: {{dest_sync}}      
+  command: chdir={{ dest_f }}/ mvn package
+- name: Synchronization of src on the control machine to dest on the remote hosts
+  synchronize: src={{ dest_file }} dest={{ dest_sync }}
+  mode: pull
 # tasks file for build
