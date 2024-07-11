@@ -1,6 +1,5 @@
----
 - name: provisioning packages
-  apt: name={{item}} state=present
+  apt: name={{item}} state=present update_cache=true
   with_items:
       - default-jdk
       - tomcat9
@@ -8,8 +7,8 @@
   
   - name: Transfer artifact to web
     synchronize:
-      src: {{war_file}}
-      dest: {{dest_folder}}
+      src: /tmp/hello-1.0.war
+      dest: /var/lib/tomcat9/webapps
   - name: Ensure started service tomcat
     service:
      name: tomcat9
