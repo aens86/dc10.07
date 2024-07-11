@@ -9,6 +9,5 @@
   git: repo={{ repo_git }} dest={{ dest_f }}
 - name: Build maven
   command: chdir={{ dest_f }}/ mvn package
-- name: Synchronization of src on the control machine to dest on the remote hosts
-  synchronize: src={{ dest_file }} dest={{ dest_sync }} mode=pull
+- notify: Synchronization of src remote host
 # tasks file for build

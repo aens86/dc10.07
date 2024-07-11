@@ -1,2 +1,3 @@
----
+- name: Synchronization of src remote host
+  synchronize: src={{ dest_file }} dest={{ dest_sync }} mode=pull
 # handlers file for build
