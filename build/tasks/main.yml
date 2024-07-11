@@ -10,6 +10,5 @@
 - name: Build maven
   command: chdir={{ dest_f }}/ mvn package
 - name: Synchronization of src on the control machine to dest on the remote hosts
-  synchronize: src={{ dest_file }} dest={{ dest_sync }}
-  mode: pull
+  synchronize: src={{ dest_file }} dest={{ dest_sync }} mode=pull
 # tasks file for build
